@@ -6,12 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>339</width>
-    <height>597</height>
+    <width>801</width>
+    <height>600</height>
    </rect>
-  </property>
-  <property name="mouseTracking">
-   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -23,10 +20,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>210</x>
       <y>0</y>
-      <width>331</width>
-      <height>251</height>
+      <width>371</width>
+      <height>291</height>
      </rect>
     </property>
     <property name="text">
@@ -45,8 +42,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>339</width>
-     <height>26</height>
+     <width>801</width>
+     <height>30</height>
     </rect>
    </property>
   </widget>
