@@ -10,36 +10,62 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QMovie
 
 
+
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        ui_width=400
-        ui_height=500
-        font_size=13
+        uiWidth=500
+        uiHeight=700
+        fontSize=13
+        voiceWidth=250
+        voiceHeight=200
+        voicePosX=(uiWidth-voiceWidth)//2
+        voicePosY=0
+        labelWidth=uiWidth//3*2
+        labelHeight=160
+        labelPosX=(uiWidth-labelWidth)//2
+        labelPosY=voicePosY+voiceHeight
+        label2Width=350
+        label2Height=30
+        label2PosX=(uiWidth-label2Width)//2
+        label2PosY=labelPosY+labelHeight+80
+        label3Width=uiWidth//4*3
+        label3Height=51
+        label3PosX=(uiWidth-label3Width)//2
+        label3PosY=label2PosY+label2Height+10
+        label4Width=label3Width
+        label4Height=label3Height
+        label4PosX=(uiWidth-label4Width)//2
+        label4PosY=label3PosY+label3Height+10
+        buttonWidth=200
+        buttonHeight=31
+        buttonPosX=(uiWidth-buttonWidth)//2
+        buttonPosY=uiHeight-buttonHeight-40
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(ui_width, ui_height)
+        MainWindow.resize(uiWidth, uiHeight)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(100, 280, 250, 51))
+        self.label_3.setGeometry(QtCore.QRect(label3PosX, label3PosY, label3Width, label3Height))
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(font_size)
+        font.setPointSize(fontSize)
         self.label_3.setFont(font)
         self.label_3.setStyleSheet("color: rgb(0, 117, 210);")
         self.label_3.setWordWrap(True)
         self.label_3.setObjectName("label_3")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(100, 250, 250, 21))
+        self.label_2.setGeometry(QtCore.QRect(label2PosX, label2PosY, label2Width, label2Height))
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(font_size)
+        font.setPointSize(fontSize)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(0, 117, 210);")
         self.label_2.setWordWrap(True)
         self.label_2.setObjectName("label_2")
         self.voiceFig = QtWidgets.QLabel(self.centralwidget)
-        self.voiceFig.setGeometry(QtCore.QRect(120, 50, 160, 121))
+        self.voiceFig.setGeometry(QtCore.QRect(voicePosX, voicePosY, voiceWidth, voiceHeight))
         self.voiceFig.setText("")
         self.gif = QMovie("icon/voice.gif")
         self.voiceFig.setMovie(self.gif)
@@ -48,10 +74,11 @@ class Ui_MainWindow(object):
         self.voiceFig.setObjectName("voiceFig")
 
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(120, 160, 200, 21))
+        self.label.setGeometry(QtCore.QRect(labelPosX, labelPosY, labelWidth, labelHeight))
+        self.label.setAlignment(QtCore.Qt.AlignTop | QtCore.Qt.AlignLeft)
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(font_size)
+        font.setPointSize(fontSize)
         font.setStyleStrategy(QtGui.QFont.PreferAntialias)
         self.label.setFont(font)
         self.label.setStyleSheet("color: rgb(0, 117, 210);")
@@ -59,10 +86,10 @@ class Ui_MainWindow(object):
         self.label.setWordWrap(True)
         self.label.setObjectName("label")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(100, 310, 250, 51))
+        self.label_4.setGeometry(QtCore.QRect(label4PosX, label4PosY, label4Width, label4Height))
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(font_size)
+        font.setPointSize(fontSize)
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("color: rgb(0, 117, 210);")
         self.label_4.setWordWrap(True)
@@ -73,13 +100,31 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.recognizeButton = QtWidgets.QPushButton(self.centralwidget)
-        self.recognizeButton.setGeometry(QtCore.QRect(100, 440, 200, 31))
+        self.recognizeButton.setGeometry(QtCore.QRect(buttonPosX, buttonPosY, buttonWidth, buttonHeight))
         font = QtGui.QFont()
         font.setFamily("Calibri")
-        font.setPointSize(font_size)
+        font.setPointSize(fontSize)
         self.recognizeButton.setFont(font)
-        self.recognizeButton.setStyleSheet("background-color: rgb(0, 117, 210);\n"
-                                           "color: rgb(255, 255, 255);")
+        self.recognizeButton.setStyleSheet("QPushButton {\n"
+                                     "    background-color: #2196F3;\n"
+                                     "    border: none;\n"
+                                     "    color: white;\n"
+                                     "    padding: 8px 16px;\n"
+                                     "    text-align: center;\n"
+                                     "    text-decoration: none;\n"
+                                     "    display: inline-block;\n"
+                                     "    font-size: 14px;\n"
+                                     "    font-weight: 500;\n"
+                                     "    border-radius: 4px;\n"
+                                     "}\n"
+                                     "\n"
+                                     "QPushButton:hover {\n"
+                                     "    background-color: #64B5F6;\n"
+                                     "}\n"
+                                     "\n"
+                                     "QPushButton:pressed {\n"
+                                     "    background-color: #1976D2;\n"
+                                     "}")
         self.recognizeButton.setObjectName("recognizeButton")
         self.recognizeButton.setText("Recognize")
 
@@ -89,7 +134,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Voice Assistant"))
-        self.label_3.setText(_translate("MainWindow", "1. Enjoy music by saying \"Play music\""))
+        self.label_3.setText(_translate("MainWindow", "1. Open the system settings by saying \"Open Settings\""))
         self.label_2.setText(_translate("MainWindow", "You can:"))
         self.label.setText(_translate("MainWindow", "Hi! How can I help?"))
         self.label_4.setText(_translate("MainWindow", "2. Take some notes by saying \"Open Notepad\""))

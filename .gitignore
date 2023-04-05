@@ -1,2 +1,8 @@
 .idea
 .vscode
+build
+asr.spec
+dist
+test.py
+guessTheWord.py
+f1lcapae.wav
