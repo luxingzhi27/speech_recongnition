@@ -48,6 +48,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def startRecording(self):
         self.is_recording = True
         self.recognizeButton.setText("Listening...")
+        self.label.setText("Listening...")
         thread = threading.Thread(target=self.recordAudio)
         thread.start()
 

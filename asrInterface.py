@@ -14,33 +14,37 @@ from PyQt5.QtGui import QMovie
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        uiWidth=500
-        uiHeight=700
+        desktop=QtWidgets.QApplication.desktop()
+        screenHeight=desktop.screenGeometry().height()
+        screenWidth=desktop.screenGeometry().width()
+        # print(screenHeight,screenWidth)
+        uiWidth=int((500/1920)*screenWidth)
+        uiHeight=int((700/1080)*screenHeight)
         fontSize=13
-        voiceWidth=250
-        voiceHeight=200
+        voiceWidth=int((250/1920)*screenWidth)
+        voiceHeight=int((200/1080)*screenHeight)
         voicePosX=(uiWidth-voiceWidth)//2
         voicePosY=0
         labelWidth=uiWidth//3*2
-        labelHeight=160
+        labelHeight=int((160/1080)*screenHeight)
         labelPosX=(uiWidth-labelWidth)//2
         labelPosY=voicePosY+voiceHeight
-        label2Width=350
-        label2Height=30
+        label2Width=int((350/1920)*screenWidth)
+        label2Height=int((30/1080)*screenHeight)
         label2PosX=(uiWidth-label2Width)//2
-        label2PosY=labelPosY+labelHeight+80
+        label2PosY=labelPosY+labelHeight+int((80/1080)*screenHeight)
         label3Width=uiWidth//4*3
-        label3Height=51
+        label3Height=int((51/1080)*screenHeight)
         label3PosX=(uiWidth-label3Width)//2
-        label3PosY=label2PosY+label2Height+10
+        label3PosY=label2PosY+label2Height+int((10/1080)*screenHeight)
         label4Width=label3Width
         label4Height=label3Height
         label4PosX=(uiWidth-label4Width)//2
-        label4PosY=label3PosY+label3Height+10
-        buttonWidth=200
-        buttonHeight=31
+        label4PosY=label3PosY+label3Height+int((10/1080)*screenHeight)
+        buttonWidth=int((200/1920)*screenWidth)
+        buttonHeight=int((31/1080)*screenHeight)
         buttonPosX=(uiWidth-buttonWidth)//2
-        buttonPosY=uiHeight-buttonHeight-40
+        buttonPosY=uiHeight-buttonHeight-int((40/1080)*screenHeight)
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(uiWidth, uiHeight)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
