@@ -6,3 +6,4 @@ dist
 test.py
 guessTheWord.py
 f1lcapae.wav
+__pycache__
