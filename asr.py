@@ -48,6 +48,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def startRecording(self):
         self.is_recording = True
         self.recognizeButton.setText("Listening...")
+        self.label.setText("Listening...")
         thread = threading.Thread(target=self.recordAudio)
         thread.start()
 
@@ -59,11 +60,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Check if the command contains "notepad" and open notepad if it does
 
     def openNotepad(self):
-        if "Notepad" in self.command:
+        if "notepad" in self.command.lower():
             os.system("notepad")
 
     def openSettings(self):
-        if "settings" in self.command or "Settings" in self.command:
+        if "settings" in self.command.lower():
              os.startfile("ms-settings:")
 
 

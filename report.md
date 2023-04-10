@@ -8,7 +8,7 @@
   
 - **after modification**
 
-  ![image-20230410230302673](./report.assets/image-20230410230302673.png)
+  <img src="./report.assets/image-20230410230302673.png" alt="image-20230410230302673" style="zoom:67%;" />
 
 The modifications are generally in two aspects:
 
@@ -17,7 +17,13 @@ The modifications are generally in two aspects:
 1. **Make the user interaction area larger and more agile**
 
     I made the user interaction area larger so that I could better show the user what the Voice Assistant is currently doing. When the user holds down the button to start recording, the area displays the text `Listenning...` to inform the user that the software is recording, when the recording is over, the area will display a message `Wait for a minute, I'm recognizing...` to tell the user that the recognition is being recognized, and the identified content will be displayed in this area after the recognition is completed.
-  
+
+  <img src="./report.assets/image-20230410231606102.png" alt="image-20230410231606102" style="zoom:67%;" />
+
+  <img src="./report.assets/image-20230410231701894.png" alt="image-20230410231701894" style="zoom:67%;" />
+
+  <img src="./report.assets/image-20230410231732610.png" alt="image-20230410231732610" style="zoom:67%;" />
+
 2. **Add a button to complete the main function and the interaction of users**
   
      When the user holds down the button, recording starts and the text displayed on the button changes to `Listening...` to tell the user recording is ongoing. And, when the user's mouse crosses and the button is held, the button changes its color to give the user feedback.
@@ -97,9 +103,10 @@ The modifications are generally in two aspects:
   
 - `asr.py`
 
-  1. Added the function of opening system settings and Notepad, when it is recognized that the user's command contains settings and notepad, it will execute the corresponding function.
-  2. By executing the function of speech recognition in a new thread, it avoids the phenomenon that the interface will freeze during the speech recognition process.
-  3. By setting a flag `isRecording` to note the recoding status, with the value of `isRecording`,the GUI will show different contents.
+  1. use `recognize_google()` to recognize.
+  2. Added the function of opening system settings and Notepad, when it is recognized that the user's command contains settings and notepad, it will execute the corresponding function.
+  3. By executing the function of speech recognition in a new thread, it avoids the phenomenon that the interface will freeze during the speech recognition process.
+  4. By setting a flag `isRecording` to note the recoding status, with the value of `isRecording`,the GUI will show different contents.
 
 ## 3. How to Improve the Accuracy of Speech Recognition
 
@@ -115,7 +122,7 @@ The modifications are generally in two aspects:
    - `recognize_sphinx()`: CMU Sphinx - requires installing PocketSphinx
    - `recognize_wit()`: Wit.ai
 
-   We can use other APIs than `recognize_sphinx()` to improve speech recognition accuracy, such as `recognize_bing()` ans `recognize_google()`.
+   We can use other APIs than `recognize_sphinx()` to improve speech recognition accuracy, such as `recognize_bing()` and `recognize_google()`.
 
 2. **Acoustic Model Training**
    We can train our own acoustic model using our own speech data, which can significantly improve the accuracy of speech recognition. There are several tools and libraries available for acoustic model training, such as Kaldi, DeepSpeech, and CMU Sphinx.
@@ -126,6 +133,3 @@ The modifications are generally in two aspects:
 4. **Noise Reduction**
 
    Noise in the audio signal can significantly reduce the accuracy of speech recognition. We can apply noise reduction techniques to remove noise from the audio signal before feeding it to the speech recognition system.
-
-
-
