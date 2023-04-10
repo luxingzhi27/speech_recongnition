@@ -4,11 +4,11 @@
 
 - **the origin GUI**
 
-  ![image-20230406153134778](https://raw.githubusercontent.com/luxingzhi27/picture/main/image-20230406153134778.png)
+  ![image-20230410230355955](./report.assets/image-20230410230355955.png)
   
 - **after modification**
 
-  ![image-20230406153538069](https://raw.githubusercontent.com/luxingzhi27/picture/main/image-20230406153538069.png)
+  ![image-20230410230302673](./report.assets/image-20230410230302673.png)
 
 The modifications are generally in two aspects:
 
